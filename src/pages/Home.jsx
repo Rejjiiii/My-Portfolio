@@ -1,9 +1,9 @@
 import { ThemeToggle } from "../components/ThemeToggle"
 import { StarBackground } from "@/components/StarBackground"
 import { Navbar } from "../components/Navbar"
-import { HeroSection } from "../components/HeroSection"
-import { AboutSection } from "../components/AboutSection"
-import { SkillsSection } from "../components/SkillsSection"
+import { HeroSection } from "../components/sections/HeroSection"
+import { AboutSection } from "../components/sections/AboutSection"
+import { SkillsSection } from "../components/sections/SkillsSection"
 
 export const Home = () => {
   return (
