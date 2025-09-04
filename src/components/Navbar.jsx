@@ -3,11 +3,11 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const navItems = [
-    { name: "ほーむ", href: "#hero" },
-    { name: "あばうと", href: "#about" },
-    { name: "すきる", href: "#skills" },
-    { name: "ぷろじぇくと", href: "#projects" },
-    { name: "こんたくと", href: "#contact" },
+    { name: "ホーム", href: "#hero" },
+    { name: "私について", href: "#about" },
+    { name: "スキル", href: "#skills" },
+    { name: "プロジェクト", href: "#projects" },
+    { name: "連絡先", href: "#contact" },
 ]
 export const Navbar = () => {
 

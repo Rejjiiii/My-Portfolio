@@ -12,9 +12,9 @@ export const HeroSection = () => {
                     </h1>
 
                     <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-                        そふとうぇあえんじにあ や ふるすたっくでべろっぱー として はたらいています。
-                        ぷろぐらみんぐ、しすてむかいはつ、そして うぇぶぎじゅつに きょうみがあり、
-                        あたらしい ちょうせんを たのしみにしています。
+                        私はソフトウェアエンジニアであり、フルスタック開発者です。
+                        プログラミングやシステム開発、ウェブ技術に情熱を持ち、
+                        常に新しい挑戦を楽しみにしています。
                     </p>
 
                     <div className="pt-4 opacity-0 animate-fade-in-delay-4">
