@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "../components/ThemeToggle"
 
 const navItems = [
     { name: "ホーム", href: "#hero" },
@@ -17,8 +18,8 @@ export const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.screenY > 10)
-        }
+            setIsScrolled(window.screenY > 10);
+        };
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
@@ -42,6 +43,8 @@ export const Navbar = () => {
                             {item.name}
                         </a>
                     ))}
+                    {/* put ThemeToggle here */}
+                    <ThemeToggle />
                 </div>
 
                 {/* mobile */}

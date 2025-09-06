@@ -1,6 +1,27 @@
-import { Mail, MapPin, Phone } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Send, Twitter } from "lucide-react"
+import { cn } from "@/lib/utils"
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 export const ContactSection = () => {
+
+    const { toast } = useToast();
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        setIsSubmitting(true);
+
+        setTimeout(() => {
+            toast({
+                title: "メッセージが送信されました！",
+                description: "できるだけ早く返信します。",
+            });
+            setIsSubmitting(false);
+        }, 1500);
+    }
+
     return (
         <section className="py-24 px-4 relative bg-secondary/30"
             id="contact">
@@ -62,13 +83,68 @@ export const ContactSection = () => {
                         </div>
 
                         <div className="pt-8">
-                            <h4>つながろう</h4>
+                            <h4 className="font-medium">つながろう</h4>
+                            <div className="flex space-x-4 justify-center">
+                                <a href="#" target="_blank">
+                                    <Linkedin />
+                                </a>
+                                <a href="#" target="_blank">
+                                    <Twitter />
+                                </a>
+                                <a href="#" target="_blank">
+                                    <Instagram />
+                                </a>
+                                <a href="#" target="_blank">
+                                    <Facebook />
+                                </a>
+                            </div>
                         </div>
 
                     </div>
-                </div>
-            </div>
 
-        </section>
+                    <div className="bg-card p-8 rounded-lg shadow-xs" onSubmit={handleSubmit}>
+                        <h3 className="text-2xl font-semibold mb-6">メッセージを送る</h3>
+
+                        <form className="space-y-6">
+                            <div>
+                                <label htmlFor="name" className="block text-sm mb-2 font-medium">
+                                    あなたの名前
+                                </label>
+                                <input type="text" id="name" name="name" required
+                                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
+                                    placeholder="Regienald Jacinto..." />
+                            </div>
+
+                            <div>
+                                <label htmlFor="email" className="block text-sm mb-2 font-medium">
+                                    あなたのメール
+                                </label>
+                                <input type="email" id="email" name="email" required
+                                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
+                                    placeholder="example@gmail.com" />
+                            </div>
+
+                            <div>
+                                <label htmlFor="message" className="block text-sm mb-2 font-medium">
+                                    あなたのメッセージ
+                                </label>
+                                <input id="message" name="message" required
+                                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
+                                    placeholder="こんにちは、〜について話したいです。" />
+                            </div>
+
+                            <button type="submit" className={cn(
+                                "cosmic-button w-full flex items-center justify-center gap-2"
+                            )}>
+                                {isSubmitting ? "送信中..." : "メッセージを送信"}
+                                < Send size={16} />
+                            </button>
+
+                        </form>
+                    </div>
+                </div>
+            </div >
+
+        </section >
     )
 }
